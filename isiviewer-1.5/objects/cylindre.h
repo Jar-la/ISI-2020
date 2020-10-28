@@ -17,7 +17,7 @@ typedef std::vector<Vertex> Circle;
  */
 class Cylinder : public TriMesh {
 public:
-  Cylinder();
+  Cylinder(int nVertices = 20, int nDivH =5);
   virtual ~Cylinder(){};
 
 };

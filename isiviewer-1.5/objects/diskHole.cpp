@@ -1,6 +1,6 @@
 #include "diskHole.h"
 
-DiskHole::DiskHole()
+DiskHole::DiskHole(int nVertices)
   : TriMesh()
 {
   _name = "DiskHole";
@@ -13,21 +13,21 @@ DiskHole::DiskHole()
 
 
   float rCInt = 0.5;            // Rayon du cercle interieur entre 0 et 1
-  float nbDiv= 20;                 // Nunber of "slices"
+  float nbDiv= nVertices;       // Nunber of "slices"
   int inc = 360/nbDiv;          // Angle of each "slices"
   // vertex coordinates
 
 
   // Push the vertex of the "edge" of the circle
-  for (int i=0; i< 360; i+= inc){
+  for (int i=0; i< nbDiv; ++i){
       vector<GLfloat> tempExt;
       vector<GLfloat> tempInt;
 
-      tempExt.push_back(cos( i * PI/180));
-      tempInt.push_back(rCInt * (cos( i * PI/180)));
+      tempExt.push_back(cos( i*inc * PI/180));
+      tempInt.push_back(rCInt * (cos( i*inc * PI/180)));
 
-      tempExt.push_back(sin( i * PI/180));
-      tempInt.push_back(rCInt * (sin( i * PI/180)));
+      tempExt.push_back(sin( i*inc * PI/180));
+      tempInt.push_back(rCInt * (sin( i*inc * PI/180)));
 
       tempExt.push_back(0);
       tempInt.push_back(0);

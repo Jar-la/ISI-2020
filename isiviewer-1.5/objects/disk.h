@@ -16,7 +16,7 @@
  */
 class Disk : public TriMesh {
 public:
-  Disk();
+  Disk(int nVertices = 20);
   virtual ~Disk(){};
 
 };

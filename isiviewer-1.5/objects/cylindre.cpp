@@ -1,6 +1,6 @@
 #include "cylindre.h"
 
-Cylinder::Cylinder()
+Cylinder::Cylinder(int nVertices, int nDivH)
   : TriMesh()
 {
   _name = "Cylinder";
@@ -12,9 +12,9 @@ Cylinder::Cylinder()
 
   vector<Triangle> t;      // Triangles
 
-  int nbDivC= 20;               // Nunber of "slices"
-  int inc = 360/nbDivC;          // Angle of each "slices"
-  float nbDivH = 5.0;
+  int nbDivC= nVertices;         // Nunber of "slices"
+  float inc = 360.0/nbDivC;          // Angle of each "slices"
+  float nbDivH =(float)nDivH;
   float res = 2.0/nbDivH;
 
 
@@ -22,12 +22,11 @@ Cylinder::Cylinder()
   // Push the vertex of the edge of a cylinder
   for ( int i=0; i<= nbDivH; ++i){   // for each heights
       Circle circle;
-      for (int j=0; j< 360; j+= inc){   // for each points around the circle
-
+      for (float j=0; j< nbDivC; ++j){   // for each points around the circle
           Vertex temp;
-          temp.x = (cos( j * PI/180));
+          temp.x = (cos( j*inc * PI/180));
           temp.y = ((res * i) - 1);
-          temp.z = (sin( j * PI/180));
+          temp.z = (sin( j*inc * PI/180));
 
           circle.push_back(temp);
       }
@@ -35,7 +34,7 @@ Cylinder::Cylinder()
   }
 
 
-  // Push the  of the edge of a cylinder
+  // Push the triangles of the edge of a cylinder
   for (int i=0; i < nbDivH; ++i){
       for(int j = 0; j < nbDivC; ++j ) {
           Triangle temp1, temp2;
@@ -91,10 +90,15 @@ Cylinder::Cylinder()
   this->addVertex(vCenterBot.x, vCenterBot.y, vCenterBot.z );
   this->addVertex(vCenterTop.x, vCenterTop.y, vCenterTop.z );
 
+
+
+
+
   // Fill triangles vector
   for(int i = 0; i < t.size(); i++) {
       this->addTriangle(t[i][0] , t[i][1], t[i][2]);
   }
+
 
   // Fill normals vectors
   computeNormalsT();

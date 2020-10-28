@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.10)
 
-project(ISI_TP2_isiviewer-1.4)
+project(ISI_TP2_isiviewer-1.5)
 
 set(OpenGL_GL_PREFERENCE "LEGACY")
 find_package(OpenGL REQUIRED)
@@ -13,7 +13,8 @@ include_directories(${PROJECT_SOURCE_DIR} ${PROJECT_SOURCE_DIR}/include ${PROJEC
 
 set(SOURCES my_qglviewer.cpp my_main_window.cpp my_scene.cpp my_object3d.cpp
             main.cpp objects/triMesh.cpp objects/cube.cpp objects/pyramid.cpp
-            objects/cubeCorner.cpp objects/disk.cpp objects/diskHole.cpp objects/cylindre.cpp )
+            objects/cubeCorner.cpp objects/disk.cpp objects/diskHole.cpp objects/cylindre.cpp
+            objects/cone.cpp)
 
 add_executable(isiviewer ${SOURCES})
 

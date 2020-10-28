@@ -1,6 +1,6 @@
 #include "disk.h"
 
-Disk::Disk()
+Disk::Disk(int nVertices)
   : TriMesh()
 {
   _name = "Disk";
@@ -8,7 +8,7 @@ Disk::Disk()
   vector<vector<GLfloat>> v;    // vertex
   vector<vector<GLint>> t;      // Triangles
 
-  int nbDiv= 20;                // Nunber of "slices"
+  int nbDiv= nVertices;         // Nunber of "slices"
   int inc = 360/nbDiv;          // Angle of each "slices"
 
   // vertex coordinates
@@ -21,17 +21,17 @@ Disk::Disk()
   v.push_back(center);
 
   // Push the vertex of the "edge" of the circle
-  for (int i=0; i< 360; i+= inc){
+  for (int i=0; i< nbDiv; ++i){
       vector<GLfloat> temp;
-      temp.push_back(cos( i * PI/180));
-      temp.push_back(sin( i * PI/180));
+      temp.push_back(cos( i*inc * PI/180));
+      temp.push_back(sin( i*inc * PI/180));
       temp.push_back(0);
       v.push_back(temp);
   }
 
 
   // triangles vertex indices
-  for(int i = 1; i < v.size(); i++) {
+  for(int i = 1; i <= v.size(); i++) {
       vector<GLint> temp;
       int current = i ;
       int next = (i+1)%v.size();
