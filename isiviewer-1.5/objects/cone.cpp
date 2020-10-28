@@ -19,10 +19,10 @@ Cone::Cone(int nVertices, int nDivH) //default  20 and 5
 
   // Vertex de l'empilement de disques
   float r=1.0;
-  for (double h = -1.0; h < 0.80; h+=incH ){
+  for (double h = -1.0; h < 1; h+=incH ){
       Circle circle;
       for (int j=0; j< nVertices; ++j){   // for each points around the circle
-          cout << "j="<< j<<endl;
+
 
           Vertex temp;
           temp.x = ((cos( j*incC * PI/180))*r);
@@ -88,7 +88,6 @@ Cone::Cone(int nVertices, int nDivH) //default  20 and 5
       Circle circle = vDisksEdge[i];
       for (int j=0; j!= circle.size(); ++j){   // for each points aroound the circle
           this->addVertex(circle[j].x, circle[j].y, circle[j].z ); //add it to the vertex list
-          //cout <<( i * circle.size())+  j<< ": ["<< circle[j].x << ","<< circle[j].y <<","<< circle[j].z<< "]\n";
       }
   }
   this->addVertex(vCenterBot.x, vCenterBot.y, vCenterBot.z );
@@ -97,11 +96,9 @@ Cone::Cone(int nVertices, int nDivH) //default  20 and 5
   // Fill triangles vector
   for(int i = 0; i < t.size(); i++) {
       this->addTriangle(t[i][0] , t[i][1], t[i][2]);
-      //cout << "i=" << i << ": ["<< t[i][0] << ","<<t [i][1] <<","<< t[i][2]<< "]\n";
-
   }
 
-/*
+
   for (int i= 0; i< _vertices.size(); i++){
       cout << "v" << i << "=["<< _vertices[i].x << "," << _vertices[i].y << "," << _vertices[i].z << "]" << endl;
   }
@@ -111,7 +108,7 @@ Cone::Cone(int nVertices, int nDivH) //default  20 and 5
       cout << "t" << i << "=["<< _triangles[i][0] << "," << _triangles[i][1] << "," << _triangles[i][2] << "]" << endl;
   }
 
-*/
+
   // Fill normals vectors
   computeNormalsT();
   computeNormalsV();
