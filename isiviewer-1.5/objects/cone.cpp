@@ -1,6 +1,6 @@
 #include "cone.h"
 
-Cone::Cone(int nVertices, int nDivH) //default  20 and 5
+Cone::Cone(int nVertices, int nDivH) //default  20
   : TriMesh()
 {
   _name = "Cone";
@@ -98,7 +98,7 @@ Cone::Cone(int nVertices, int nDivH) //default  20 and 5
       this->addTriangle(t[i][0] , t[i][1], t[i][2]);
   }
 
-
+/*
   for (int i= 0; i< _vertices.size(); i++){
       cout << "v" << i << "=["<< _vertices[i].x << "," << _vertices[i].y << "," << _vertices[i].z << "]" << endl;
   }
@@ -107,7 +107,7 @@ Cone::Cone(int nVertices, int nDivH) //default  20 and 5
   for (int i= 0; i< _triangles.size() ; i++){
       cout << "t" << i << "=["<< _triangles[i][0] << "," << _triangles[i][1] << "," << _triangles[i][2] << "]" << endl;
   }
-
+*/
 
   // Fill normals vectors
   computeNormalsT();

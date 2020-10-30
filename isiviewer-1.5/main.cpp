@@ -21,6 +21,7 @@
 #include "objects/diskHole.h"
 #include "objects/cylindre.h"
 #include "objects/cone.h"
+#include "objects/sphere.h"
 
 
 /**
@@ -47,13 +48,14 @@ int main(int argc, char *argv[]){
   QPointer<MyScene> myScene = new MyScene(objectRadius);
 
   //add simple objects
-  //myScene->addObject(new Cube());
-  //myScene->addObject(new Pyramid());
-  //myScene->addObject(new CubeCorner());
-  //myScene->addObject(new Disk());       //nVertices defaults to 20
-  myScene->addObject(new DiskHole(21));   //nVertices defaults to 20
-  //myScene->addObject(new Cylinder());   //nVertices defaults to 20 and nDivH defaults to 5
-  //myScene->addObject(new Cone());       //nVertices defaults to 20 and nDivH defaults to 5
+  myScene->addObject(new Cube());
+  myScene->addObject(new Pyramid());
+  myScene->addObject(new CubeCorner());
+  myScene->addObject(new Disk());       //nVertices defaults to 20
+  myScene->addObject(new DiskHole());   //nVertices defaults to 20
+  myScene->addObject(new Cylinder());   //nVertices defaults to 20 and nDivH defaults to 5
+  myScene->addObject(new Cone(20,10));       //nVertices defaults to 20 and nDivH defaults to 5
+  myScene->addObject(new Sphere(50));
 
   // add surface functions
   // ...
