@@ -22,6 +22,8 @@
 #include "objects/cylindre.h"
 #include "objects/cone.h"
 #include "objects/sphere.h"
+#include "objects/torus.h"
+#include "objects/func_surface.h"
 
 
 /**
@@ -48,17 +50,21 @@ int main(int argc, char *argv[]){
   QPointer<MyScene> myScene = new MyScene(objectRadius);
 
   //add simple objects
-  myScene->addObject(new Cube());
-  myScene->addObject(new Pyramid());
-  myScene->addObject(new CubeCorner());
-  myScene->addObject(new Disk());       //nVertices defaults to 20
-  myScene->addObject(new DiskHole());   //nVertices defaults to 20
-  myScene->addObject(new Cylinder());   //nVertices defaults to 20 and nDivH defaults to 5
-  myScene->addObject(new Cone(20,10));       //nVertices defaults to 20 and nDivH defaults to 5
-  myScene->addObject(new Sphere(50));
+  //myScene->addObject(new Cube());
+  //myScene->addObject(new Pyramid());
+  //myScene->addObject(new CubeCorner());
+  //myScene->addObject(new Disk());       //nVertices defaults to 20
+  //myScene->addObject(new DiskHole());   //nVertices defaults to 20
+  //myScene->addObject(new Cylinder());   //nVertices defaults to 20 and nDivH defaults to 5
+  //myScene->addObject(new Cone());       //nVertices defaults to 20 and nDivH defaults to 5
+  //myScene->addObject(new Sphere());     //nVertices defaults to 20
+  //myScene->addObject(new Torus());      //nVertices defaults to 20, nRings defaults to 16 and ringRadius to 0.25
 
   // add surface functions
-  // ...
+  //myScene->addObject(new FuncSurface(50,50,-PI,PI,-PI,PI,func_expcos));
+  //myScene->addObject(new FuncSurface(50,50,-PI,PI,-PI,PI,func_expsin));
+  //myScene->addObject(new FuncSurface(50,50,-PI,PI,-PI,PI,func_sinXsinY));
+  //myScene->addObject(new FuncSurface(50,50,-PI,PI,-PI,PI,func_cosXcosY));
 
   // add user defined OFF files
   // ...

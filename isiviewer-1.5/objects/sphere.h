@@ -9,8 +9,6 @@
 
 #include "triMesh.h"
 
-typedef std::vector<Vertex> Circle;
-
 /**
  *  Sphere Object
  *

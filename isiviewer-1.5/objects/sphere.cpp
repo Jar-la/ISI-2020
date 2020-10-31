@@ -50,7 +50,6 @@
           temp2.push_back((i+nVertices+1+ (tr * nVertices)) % (v.size()-2) );
           temp2.push_back((i+1+ (tr * nVertices)) % (v.size()-2) );
 
-
           t.push_back(temp2);
           }
       }
@@ -102,10 +101,6 @@
   // Fill normals vectors
   computeNormalsT();
   computeNormalsV();
-
-
-
-
 
 }
 

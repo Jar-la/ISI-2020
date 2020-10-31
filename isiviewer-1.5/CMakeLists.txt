@@ -14,7 +14,7 @@ include_directories(${PROJECT_SOURCE_DIR} ${PROJECT_SOURCE_DIR}/include ${PROJEC
 set(SOURCES my_qglviewer.cpp my_main_window.cpp my_scene.cpp my_object3d.cpp
             main.cpp objects/triMesh.cpp objects/cube.cpp objects/pyramid.cpp
             objects/cubeCorner.cpp objects/disk.cpp objects/diskHole.cpp objects/cylindre.cpp
-            objects/cone.cpp objects/sphere.cpp)
+            objects/cone.cpp objects/sphere.cpp objects/torus.cpp objects/func_surface.cpp)
 
 add_executable(isiviewer ${SOURCES})
 
@@ -43,7 +43,7 @@ IF(BUILD_DOCUMENTATION)
   SET( doxy_html_index_file ${CMAKE_CURRENT_BINARY_DIR}/html/index.html )
   SET( doxy_output_root     ${CMAKE_CURRENT_BINARY_DIR}                 ) # Pasted into Doxyfile.in
   SET( doxy_input           ${PROJECT_SOURCE_DIR}                       ) # Pasted into Doxyfile.in
-  #SET( doxy_extra_files     ${CMAKE_CURRENT_SOURCE_DIR}/mainpage.dox    ) # Pasted into Doxyfile.in
+  SET( doxy_extra_files     ${CMAKE_CURRENT_SOURCE_DIR}/mainpage.dox    ) # Pasted into Doxyfile.in
 
   CONFIGURE_FILE( ${doxyfile_in} ${doxyfile} @ONLY )
 
