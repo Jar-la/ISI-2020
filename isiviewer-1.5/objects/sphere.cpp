@@ -20,7 +20,7 @@
   for(float la = 0.0; la < 360.0; la += latInc){
         for(float lo = 0.0; lo < 180.0; lo += lonInc){
           Vertex temp;
-          cout << "la:" << la << " lo:" << lo <<endl;
+
           temp.x = (float) (r * sin(lo * PI/180) * cos(la * PI/180));
           temp.y = (float) (r * cos(lo * PI/180) );
           temp.z = (float) (r * sin(lo * PI/180) * sin(la * PI/180));
@@ -86,14 +86,5 @@
   computeNormalsT();
   computeNormalsV();
 
-/*
-  for (int i= 0; i< _vertices.size(); i++){
-      cout << "v" << i << "=["<< _vertices[i].x << "," << _vertices[i].y << "," << _vertices[i].z << "]" << endl;
-  }
-  cout << "Triangle \n";
-  for (int i= 0; i< _triangles.size() ; i++){
-      cout << "t" << i << "=["<< _triangles[i][0] << "," << _triangles[i][1] << "," << _triangles[i][2] << "]" << endl;
-  }
-*/
 }
 
