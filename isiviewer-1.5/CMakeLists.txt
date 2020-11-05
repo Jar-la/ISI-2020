@@ -14,7 +14,8 @@ include_directories(${PROJECT_SOURCE_DIR} ${PROJECT_SOURCE_DIR}/include ${PROJEC
 set(SOURCES my_qglviewer.cpp my_main_window.cpp my_scene.cpp my_object3d.cpp
             main.cpp objects/triMesh.cpp objects/cube.cpp objects/pyramid.cpp
             objects/cubeCorner.cpp objects/disk.cpp objects/diskHole.cpp objects/cylindre.cpp
-            objects/cone.cpp objects/sphere.cpp objects/torus.cpp objects/func_surface.cpp)
+            objects/cone.cpp objects/sphere.cpp objects/torus.cpp objects/func_surface.cpp
+            objects/off_loader.cpp)
 
 add_executable(isiviewer ${SOURCES})
 

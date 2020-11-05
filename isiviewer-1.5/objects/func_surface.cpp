@@ -23,16 +23,16 @@ FuncSurface::FuncSurface(int nbx, int nby, float minx, float maxx, float miny, f
    vector<Vertex> v;
    vector<Triangle> t;
 
-   float x;
-   float y;
-   float incX = 2.0/nbx;
-   float incY = 2.0/nby;
+   double x;
+   double y;
+   double incX = 2.0/nbx;
+   double incY = 2.0/nby;
 
-   float valX;
-   float valY;
-   float valZ =0;
-   float incValX = (maxx - minx) / nbx;
-   float incValY = (maxy - miny) / nby;
+   double valX;
+   double valY;
+   double valZ =0;
+   double incValX = (maxx - minx) / nbx;
+   double incValY = (maxy - miny) / nby;
 
    valX = minx;
    for( x = -1.0; x < 1.0 + incX; x += incX){

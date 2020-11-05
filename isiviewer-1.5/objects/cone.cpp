@@ -12,7 +12,7 @@ Cone::Cone(int nVertices, int nDivH) //default  20
 
   vector<Triangle> t;      // Triangles
 
-  float incC = 360/nVertices ;         // Angle of each "slices"
+  float incC = 360.0/nVertices ;         // Angle of each "slices"
   double incH = 2.0/nDivH;
   double decR= 1.0/nDivH;
 
@@ -22,7 +22,6 @@ Cone::Cone(int nVertices, int nDivH) //default  20
   for (double h = -1.0; h < 1; h+=incH ){
       Circle circle;
       for (int j=0; j< nVertices; ++j){   // for each points around the circle
-
 
           Vertex temp;
           temp.x = ((cos( j*incC * PI/180))*r);
@@ -56,10 +55,7 @@ Cone::Cone(int nVertices, int nDivH) //default  20
       }
   }
 
-
-
   for(int i=0; i < nVertices; ++i){
-
       Triangle temp1, temp2;
 
       temp1.push_back(i);
@@ -73,17 +69,11 @@ Cone::Cone(int nVertices, int nDivH) //default  20
       temp2.push_back( ((vDisksEdge.size() * nVertices) - nVertices) +i);
 
       t.push_back(temp2);
-
-
   }
-
-
-
 
   //--- Fill vertices and triangles vectors
 
   // Fill vertices vector
-
   for ( int i = 0 ; i!= vDisksEdge.size(); ++i){   // for each heights
       Circle circle = vDisksEdge[i];
       for (int j=0; j!= circle.size(); ++j){   // for each points aroound the circle
@@ -98,23 +88,7 @@ Cone::Cone(int nVertices, int nDivH) //default  20
       this->addTriangle(t[i][0] , t[i][1], t[i][2]);
   }
 
-/*
-  for (int i= 0; i< _vertices.size(); i++){
-      cout << "v" << i << "=["<< _vertices[i].x << "," << _vertices[i].y << "," << _vertices[i].z << "]" << endl;
-  }
-
-  cout << "Triangle \n";
-  for (int i= 0; i< _triangles.size() ; i++){
-      cout << "t" << i << "=["<< _triangles[i][0] << "," << _triangles[i][1] << "," << _triangles[i][2] << "]" << endl;
-  }
-*/
-
   // Fill normals vectors
   computeNormalsT();
   computeNormalsV();
-
-
-
-
-
 }

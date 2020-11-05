@@ -4,7 +4,7 @@
  Sphere:: Sphere(int nVertices) //default  20
   : TriMesh()
 {
-  _name = " Sphere";
+  _name = "Sphere";
 
   // vertex
   vector<Vertex> v;
@@ -12,17 +12,15 @@
   Vertex vCenterBot(0.0, -1.0, 0.0);
   vector<Triangle> t;      // Triangles
 
-  float latInc = 360.0f/nVertices;         // Angle of each "slices"
-  float lonInc = 180.0f/nVertices;
+  float latInc = 360.0/nVertices;         // Angle of each "slices"
+  float lonInc = 180.0/nVertices;
   float r = 1.0;
 
-
   // Vertex
-
-  for(float la = 0.0f; la < 360.f; la += latInc){
-        for(float lo = 0.0f; lo < 180.0f; lo += lonInc){
+  for(float la = 0.0; la < 360.0; la += latInc){
+        for(float lo = 0.0; lo < 180.0; lo += lonInc){
           Vertex temp;
-
+          cout << "la:" << la << " lo:" << lo <<endl;
           temp.x = (float) (r * sin(lo * PI/180) * cos(la * PI/180));
           temp.y = (float) (r * cos(lo * PI/180) );
           temp.z = (float) (r * sin(lo * PI/180) * sin(la * PI/180));
@@ -34,22 +32,20 @@
   v.push_back(vCenterBot);
 
   // Triangles
-
   for(int tr=0; tr<nVertices;++tr ){
       for (int i =0; i<nVertices-1; ++i){
           Triangle temp,temp2;
           if (v[i].x != v[i+nVertices].x){
 
-
           temp.push_back((i + (tr * nVertices)) % (v.size()-2 ));
           temp.push_back((i+nVertices + (tr * nVertices)) % (v.size()-2) );
           temp.push_back((i+nVertices +1 + (tr * nVertices)) % (v.size()-2) );
-          t.push_back(temp);
 
           temp2.push_back((i+ (tr * nVertices)) % (v.size()-2) );
           temp2.push_back((i+nVertices+1+ (tr * nVertices)) % (v.size()-2) );
           temp2.push_back((i+1+ (tr * nVertices)) % (v.size()-2) );
 
+          t.push_back(temp);
           t.push_back(temp2);
           }
       }
@@ -86,21 +82,18 @@
       this->addTriangle(t[i][0] , t[i][1], t[i][2]);
   }
 
+  // Fill normals vectors
+  computeNormalsT();
+  computeNormalsV();
+
 /*
   for (int i= 0; i< _vertices.size(); i++){
       cout << "v" << i << "=["<< _vertices[i].x << "," << _vertices[i].y << "," << _vertices[i].z << "]" << endl;
   }
-
-
   cout << "Triangle \n";
   for (int i= 0; i< _triangles.size() ; i++){
       cout << "t" << i << "=["<< _triangles[i][0] << "," << _triangles[i][1] << "," << _triangles[i][2] << "]" << endl;
   }
 */
-
-  // Fill normals vectors
-  computeNormalsT();
-  computeNormalsV();
-
 }
 

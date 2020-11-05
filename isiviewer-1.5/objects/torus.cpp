@@ -23,7 +23,6 @@
   for (int verticalIt = 0; verticalIt < numVerticesPerColumn; verticalIt++)
   {
     theta = verticalAngularStride * verticalIt;
-
     for (int horizontalIt = 0; horizontalIt < numVerticesPerRow; horizontalIt++)
     {
       phi = horizontalAngularStride * horizontalIt;
@@ -34,10 +33,8 @@
       temp.z = ringRadius * (float)sin(phi);
 
       ver.push_back(temp);
-
     }
   }
-
 
   // Triangles
   for(int j = 0 ; j < nRings; ++j){
@@ -62,8 +59,6 @@
 
       }
   }
-
-
   //--- Fill vertices and triangles vectors
 
   // Fill vertices vector
@@ -80,10 +75,5 @@
   // Fill normals vectors
   computeNormalsT();
   computeNormalsV();
-
-
-
-
-
 }
 
