@@ -1,5 +1,5 @@
 /**
- * @author Alexandre Lafon
+ * @author Alexandre Lafon & Aurelien LLORCA
  * @date   Oct 2020
  *
  * Parses a OFF File

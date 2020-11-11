@@ -1,5 +1,5 @@
 /**
- * @author Bruno Jobard
+ * @author Bruno Jobard & Alexandre LAFON & Aurelien LLORCA
  * @date   Oct 2012
  *
  *  Defines 3D triangular mesh

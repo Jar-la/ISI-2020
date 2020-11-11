@@ -1,5 +1,5 @@
 /**
- * @author Bruno Jobard
+ * @author Alexandre LAFON & Aurelien LLORCA
  * @date   Oct 2012
  *
  *  Defines a 3D cube

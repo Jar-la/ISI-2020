@@ -1,5 +1,5 @@
 /**
- * @author Alexandre LAFON
+ * @author Alexandre LAFON & Aurelien LLORCA
  * @date   Oct 2020
  *
  *  Defines a 3D Torus

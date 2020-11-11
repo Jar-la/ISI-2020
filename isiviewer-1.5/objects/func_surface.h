@@ -1,5 +1,5 @@
 /**
- * @author Alexandre Lafon
+ * @author Alexandre Lafon & Aurelien LLORCA
  * @date   Oct 2020
  *
  * Defines a surface that displays a function
